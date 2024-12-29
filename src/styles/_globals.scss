@@ -98,6 +98,15 @@ svg * {
   transition-duration: var(--transition-duration);
 }
 
+button {
+  user-select: none;
+  white-space: nowrap;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 a {
   color: inherit;
 
@@ -114,4 +123,18 @@ a {
   outline: rem(2) dashed var(--color-light);
   outline-offset: rem(4);
   transition-duration: 0s !important;
+}
+
+a,
+button {
+  &[aria-label] {
+    position: relative;
+
+    &::before {
+      @include abs-center;
+      @include square(rem(44));
+
+      content: '';
+    }
+  }
 }

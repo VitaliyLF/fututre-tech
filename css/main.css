@@ -443,7 +443,7 @@ a[class] {
   background-repeat: no-repeat;
 }
 .icon--yellow-arrow::after {
-  background-image: url("../../img/arrow-top-right-yellow.svg");
+  background-image: url("../img/arrow-top-right-yellow.svg");
 }
 
 .logo {

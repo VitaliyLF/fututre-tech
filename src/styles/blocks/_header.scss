@@ -6,12 +6,34 @@
   z-index: 100;
   animation-name: scrolling-header;
   animation-fill-mode: both;
-  animation-timeline: scroll();
+  animation-timeline: scroll(root);
   animation-range: rem(100) rem(200);
 
   @keyframes scrolling-header {
     to {
       box-shadow: 0 0 1rem 0 var(--color-dark-40);
+    }
+  }
+
+  &__progress {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 2px;
+    transform-origin: 0 50%;
+    animation: scrolling-progress linear;
+    animation-timeline: scroll(root);
+    background-color: var(--color-light);
+  }
+
+  @keyframes scrolling-progress {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
     }
   }
 

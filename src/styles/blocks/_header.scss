@@ -1,13 +1,21 @@
 @use '../helpers' as *;
 
 .header {
+  // когда мы проскролим страницу на 100px начнется анимация
+  --_animationScrollingHeaderStartsAfter: 100px;
+  // после тогда как мы проскролилсь на 100px мы запустим анимацию которая будет 200px
+  --_animationScrollingHeaderDistance: 200px;
+
   position: sticky;
   top: 0;
   z-index: 100;
-  animation-name: scrolling-header;
-  animation-fill-mode: both;
-  animation-timeline: scroll(root);
-  animation-range: rem(100) rem(200);
+  animation: scrolling-header both;
+
+  @supports (animation-timeline: scroll()) {
+    animation-timeline: scroll();
+    animation-range-start: var(--_animationScrollingHeaderStartsAfter);
+    animation-range-end: var(--_animationScrollingHeaderDistance);
+  }
 
   @keyframes scrolling-header {
     to {
@@ -23,9 +31,12 @@
     width: 100vw;
     height: 2px;
     transform-origin: 0 50%;
-    animation: scrolling-progress linear;
-    animation-timeline: scroll(root);
     background-color: var(--color-light);
+
+    @supports (animation-timeline: scroll()) {
+      animation: scrolling-progress linear;
+      animation-timeline: scroll();
+    }
   }
 
   @keyframes scrolling-progress {
@@ -116,7 +127,7 @@
         padding: rem(10) rem(18);
       }
 
-      &.is-active {
+      &:is(.is-active) {
         font-weight: 500;
         color: var(--color-light);
         background-color: var(--color-dark);

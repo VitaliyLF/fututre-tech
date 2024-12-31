@@ -31,7 +31,7 @@
     width: 100vw;
     height: 2px;
     transform-origin: 0 50%;
-    background-color: var(--color-light);
+    background-color: var(--color-accent);
 
     @supports (animation-timeline: scroll()) {
       animation: scrolling-progress linear;

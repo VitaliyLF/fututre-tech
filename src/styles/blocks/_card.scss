@@ -6,8 +6,7 @@
     grid-template-columns: 37.5% auto;
   }
 
-  &__preview,
-  &__body {
+  :is(&__preview, &__body) {
     padding: rem(80);
 
     @include laptop {

@@ -13,7 +13,7 @@
     color: var(--color-accent);
   }
 
-  &.is-active {
+  &:is(.is-active) {
     .burger-button__line {
       &:first-child {
         rotate: 45deg;

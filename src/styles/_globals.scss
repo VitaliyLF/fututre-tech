@@ -131,6 +131,10 @@ a {
   transition-duration: 0s !important;
 }
 
+picture {
+  display: contents;
+}
+
 a,
 button {
   &[aria-label] {

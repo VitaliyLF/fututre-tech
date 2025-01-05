@@ -55,6 +55,10 @@
     }
   }
 
+  &__description {
+    text-wrap: pretty;
+  }
+
   &__metrics {
     grid-area: metrics;
 

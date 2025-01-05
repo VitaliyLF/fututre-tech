@@ -1,0 +1,54 @@
+@use '../helpers' as *;
+
+.bordered-grid {
+  --_columns: 1;
+  --_item-padding-y: #{fluid(80, 40)};
+
+  display: grid;
+  grid-template-columns: repeat(var(--_columns), 1fr);
+
+  &--2-cols {
+    --_columns: 2;
+  }
+
+  &--3-cols {
+    --_columns: 3;
+    --_item-padding-x: #{rem(50)};
+
+    @include laptop {
+      --_item-padding-x: #{rem(40)};
+    }
+
+    @include tablet-above {
+      .bordered-grid__item {
+        &:nth-child(3n - 2),
+        &:nth-child(3n - 1) {
+          padding-right: var(--_item-padding-x);
+          border-right: var(--border);
+        }
+
+        &:nth-child(3n - 1) {
+          @include full-vw-centered-line(bottom);
+        }
+
+        &:nth-child(3n - 1),
+        &:nth-child(3n) {
+          padding-left: var(--_item-padding-x);
+        }
+      }
+    }
+
+    @include tablet {
+      --_columns: 1;
+
+      .bordered-grid__item:not(:last-child) {
+        border-bottom: var(--border);
+      }
+    }
+  }
+
+  &__item {
+    padding-block: var(--_item-padding-y);
+    display: flex;
+  }
+}

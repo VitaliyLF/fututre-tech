@@ -36,6 +36,10 @@
     justify-self: start;
   }
 
+  &__title {
+    text-wrap: balance;
+  }
+
   &__body {
     border-block: var(--border);
   }

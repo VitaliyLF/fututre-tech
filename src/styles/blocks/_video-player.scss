@@ -49,13 +49,13 @@
   &__play-button {
     --_size: #{rem(70)};
 
+    color: var(--color-light);
+
     @include square(var(--_size));
 
     @include laptop {
       --_size: #{rem(50)};
     }
-
-    color: var(--color-light);
 
     svg {
       width: 100%;

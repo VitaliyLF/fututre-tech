@@ -14,6 +14,10 @@ jobs:
   lint:
     # На чем будет выполняться, это ресурсы github, есть ограничения
     runs-on: ubuntu-latest
+    # Матрица чтобы проверить на разных версиях node
+    strategy:
+      matrix:
+        node-version: [14, 16, 18, 20]
     # Шаги сами actions
     steps:
       # Имя шага (не обязательно)
@@ -25,7 +29,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: ${{ matrix.node-version }}
       # Делаем установку зависимостей
       - name: Install dependencies
         run: npm install
@@ -34,6 +38,7 @@ jobs:
         run: npm run format:check
   # Добавляем новый job для сборки
   build:
+    # Указываем что нужно выполнить jobs  линтинг сначала перед сборкой
     needs: lint
     runs-on: ubuntu-latest
     steps:
@@ -42,7 +47,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: npm install
       - name: Build

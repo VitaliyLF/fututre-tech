@@ -4,7 +4,7 @@ const buildFolder = './app'
 export const paths = {
   base: {
     src: srcFolder,
-    build: buildFolder
+    build: buildFolder,
   },
   srcSvg: `${srcFolder}/img/svg/**.svg`,
   srcImgFolder: `${srcFolder}/img`,
@@ -15,5 +15,5 @@ export const paths = {
   srcMainJs: `${srcFolder}/js/main.js`,
   buildJsFolder: `${buildFolder}/js`,
   srcComponentsFolder: `${srcFolder}/components`,
-  assetsFolder: `${srcFolder}/assets`
+  assetsFolder: `${srcFolder}/assets`,
 }

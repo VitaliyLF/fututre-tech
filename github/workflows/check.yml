@@ -1,0 +1,29 @@
+# Название
+name: Check
+# Когда его триггерует
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+# Какие нужно выполнить проверки
+jobs:
+  # Можем назвать как угодно
+  lint:
+    # На чем будет выполняться, это ресурсы github, есть ограничения
+    runs-on: ubuntu-latest
+    # Шаги сами actions
+    steps:
+      # Имя шага (не обязательно)
+      - name: Checkout
+        # Используем action из github(https://github.com/actions/checkout) их очень много и есть маркетплейс
+        # Для скачивания репозитория
+        uses: actions/checkout@v3
+      # Делаем установку зависимостей
+      - name: Install dependencies
+        run: npm ci
+      # Делаем линтинг
+      - name: Check formatting
+        run: npm run format:check

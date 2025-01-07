@@ -9,9 +9,9 @@ export const svgSprites = () => {
     .pipe(
       svgmin({
         js2svg: {
-          pretty: true
-        }
-      })
+          pretty: true,
+        },
+      }),
     )
     .pipe(
       cheerio({
@@ -21,19 +21,19 @@ export const svgSprites = () => {
           $('[style]').removeAttr('style')
         },
         parserOptions: {
-          xmlMode: true
-        }
-      })
+          xmlMode: true,
+        },
+      }),
     )
     .pipe(replace('&gt;', '>'))
     .pipe(
       svgSprite({
         mode: {
           stack: {
-            sprite: '../sprite.svg'
-          }
-        }
-      })
+            sprite: '../sprite.svg',
+          },
+        },
+      }),
     )
     .pipe(app.gulp.dest(app.paths.buildImgFolder))
 }

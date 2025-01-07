@@ -11,7 +11,9 @@
     "deploy": "gh-pages -d app",
     "cache": "gulp cache",
     "backend": "gulp backend",
-    "zip": "gulp zip --build"
+    "zip": "gulp zip --build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "author": "vitaliyLF",
   "license": "ISC",
@@ -47,6 +49,7 @@
     "gulp-zip": "^6.0.0",
     "postcss": "^8.4.49",
     "postcss-scss": "^4.0.9",
+    "prettier": "^3.4.2",
     "sass": "^1.83.0",
     "typograf": "^7.4.1",
     "webpack": "^5.91.0",

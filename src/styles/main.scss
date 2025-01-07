@@ -4,6 +4,7 @@
 @use 'utils';
 @use 'globals';
 
+// Main page
 @use 'blocks/icon';
 @use 'blocks/logo';
 @use 'blocks/button';
@@ -32,3 +33,11 @@
 @use 'blocks/review-card';
 @use 'blocks/about-card';
 @use 'blocks/about';
+
+// News page
+@use 'blocks/news';
+@use 'blocks/news-card';
+@use 'blocks/summary';
+@use 'blocks/hero-alt';
+@use 'blocks/video-player';
+@use 'blocks/video-card';

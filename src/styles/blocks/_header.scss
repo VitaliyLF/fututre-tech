@@ -49,22 +49,26 @@
   }
 
   &__promo {
-    padding-block: rem(20);
+    padding-block: rem(12);
     text-align: center;
     border-bottom: var(--border);
     background-color: var(--color-dark-15);
 
     @include mobile {
-      padding-block: rem(14);
+      padding-block: rem(8);
     }
   }
 
+  &__link {
+    font-size: rem(16);
+  }
+
   &__body {
-    padding-block: rem(24);
+    padding-block: rem(14);
     background-color: var(--color-dark-10);
 
     @include mobile {
-      padding-block: rem(20);
+      padding-block: rem(10);
     }
 
     &-inner {

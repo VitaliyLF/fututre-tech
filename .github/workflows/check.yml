@@ -21,22 +21,28 @@ jobs:
         # Используем action из github(https://github.com/actions/checkout) их очень много и есть маркетплейс
         # Для скачивания репозитория
         uses: actions/checkout@v3
+      # Устанавливаем версию node
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
       # Делаем установку зависимостей
       - name: Install dependencies
         run: npm install
       # Делаем линтинг
       - name: Check formatting
         run: npm run format:check
-
-# Делаем сборку
-build:
-  # Указываем что нужно выполнить jobs  линтинг сначала перед сборкой
-  needs: lint
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Install dependencies
-      run: npm install
-    - name: Build
-      run: npm run build
+  # Добавляем новый job для сборки
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build

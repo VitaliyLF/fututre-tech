@@ -69,7 +69,10 @@
   <body class="page__body">
     <div class="site-container">
       @include('../components/header.html')
-      <main class="page__main" id="main">blog 1312</main>
+      <main class="page__main" id="main">
+        @include('../components/blog-details.html')
+        @include('../components/about.html')
+      </main>
       @include('../components/footer.html')
     </div>
   </body>

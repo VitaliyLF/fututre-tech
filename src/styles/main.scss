@@ -41,3 +41,8 @@
 @use 'blocks/hero-alt';
 @use 'blocks/video-player';
 @use 'blocks/video-card';
+
+// Blog page
+@use 'blocks/table-of-contents';
+@use 'blocks/blog-details';
+@use 'blocks/expandable-content';

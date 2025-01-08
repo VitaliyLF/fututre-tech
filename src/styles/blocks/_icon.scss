@@ -32,4 +32,10 @@
       background-image: url('../img/eye-yellow.svg');
     }
   }
+
+  &--gray-arrow-down {
+    &::after {
+      background-image: url('../img/arrow-down-gray.svg');
+    }
+  }
 }

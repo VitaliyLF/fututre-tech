@@ -12,6 +12,10 @@
     @include laptop {
       border-radius: rem(10);
     }
+
+    &--small {
+      height: fluid(290, 208);
+    }
   }
 
   &__panel {
@@ -37,6 +41,11 @@
         rgba(20, 20, 20, 0) 44.27%,
         #141414 100%
       );
+    }
+
+    &--center {
+      justify-content: center;
+      align-items: center;
     }
 
     // все что внутри панели будет выше видео

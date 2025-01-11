@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" class="page">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#111111" />
+    <title>Future tech | Resources</title>
+    <meta name="description" content="you description" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="name title site" />
+    <meta property="og:url" content="https://yousite.com" />
+    <meta property="og:title" content="you description" />
+    <meta property="og:description" content="you description" />
+    <meta property="og:image" content="you link img social" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="you url" />
+    <meta property="twitter:title" content="you description" />
+    <meta property="twitter:description" content="you description" />
+    <meta property="twitter:image" content="you link img social" />
+    <meta name="keywords" content="you keywords" />
+    <meta name="robots" content="all" />
+    <meta name="author" content="you name" />
+    <link rel="canonical" href="https://yousite.com" />
+    <!-- must match the original link that you specify in the url  -->
+    <link
+      rel="preload"
+      href="fonts/Inter-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin />
+    <link
+      rel="preload"
+      href="fonts/Inter-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin />
+    <link
+      rel="preload"
+      href="fonts/Inter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin />
+    <link
+      rel="preload"
+      href="fonts/Inter-SemiBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin />
+    <link
+      rel="preload"
+      href="fonts/KumbhSans-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin />
+    <link
+      rel="preload"
+      href="fonts/KumbhSans-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin />
+    <link rel="stylesheet" as="style" href="css/vendor.css" />
+    <link rel="stylesheet" as="style" href="css/main.css" />
+    <script defer src="js/main.js"></script>
+  </head>
+
+  <body class="page__body">
+    <div class="site-container">
+      @include('../components/header.html')
+      <main class="page__main" id="main">
+        @include('../components/hero-resources.html')
+        @include('../components/reports.html')
+        @include('../components/about.html')
+      </main>
+      @include('../components/footer.html')
+    </div>
+  </body>
+</html>

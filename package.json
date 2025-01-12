@@ -58,6 +58,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "aos": "^2.3.4",
+    "imask": "^7.6.1",
     "rellax": "^1.12.1",
     "simplebar": "^6.2.5",
     "swiped-events": "^1.1.9",

@@ -144,3 +144,62 @@ button {
     }
   }
 }
+
+dialog {
+  border: none;
+  padding: 0;
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+input {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+  margin: 0;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration,
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    background-color: transparent !important;
+    transition:
+      background-color 10000000s 10000000s,
+      box-shadow 10000000s 10000000s;
+  }
+}
+
+textarea {
+  &::-webkit-resizer {
+    display: none;
+  }
+
+  &::-moz-resizer {
+    display: none;
+  }
+
+  &::resizer {
+    display: none;
+  }
+}

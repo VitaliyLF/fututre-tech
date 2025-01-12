@@ -15,6 +15,10 @@
         #141414 100%
       ),
       var(--bgImg) no-repeat center / cover;
+
+    @include laptop-above {
+      background-attachment: fixed;
+    }
   }
 
   &__title {

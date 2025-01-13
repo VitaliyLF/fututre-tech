@@ -1,6 +1,8 @@
+import BaseComponent from './base-component.js'
+
 const rootSelector = '[data-js-tabs]'
 
-class Tabs {
+class Tabs extends BaseComponent {
   selectors = {
     root: rootSelector,
     button: '[data-js-tab-button]',
@@ -17,6 +19,8 @@ class Tabs {
   }
 
   constructor(rootElement) {
+    super()
+
     this.rootElement = rootElement
 
     this.buttonElements = this.rootElement.querySelectorAll(
@@ -36,17 +40,6 @@ class Tabs {
     this.limitTabsIndex = this.buttonElements.length - 1
 
     this.bindEvents()
-  }
-
-  getProxyState(initialState) {
-    return new Proxy(initialState, {
-      get: (target, prop) => target[prop],
-      set: (target, prop, value) => {
-        target[prop] = value
-        this.updateUI()
-        return true
-      },
-    })
   }
 
   updateUI() {

@@ -1,25 +1,9 @@
-export const isMobile = () => {
-  if (window.innerWidth < 768) {
-    return true
-  }
+export const isSm = () => window.matchMedia('(max-width: 576px)').matches
 
-  return false
-}
+export const isMd = () => window.matchMedia('(max-width: 768px)').matches
 
-export const isTablet = () => {
-  if (window.innerWidth >= 769 && window.innerWidth <= 1024) {
-    return true
-  }
+export const isLg = () => window.matchMedia('(max-width: 1024px)').matches
 
-  return false
-}
+export const isXl = () => window.matchMedia('(max-width: 1200px)').matches
 
-export const isDesktop = () => {
-  if (window.innerWidth > 1025) {
-    return true
-  }
-
-  return false
-}
-
-export const isMobileViewPort = () => window.innerWidth > 865
+export const isXxl = () => window.matchMedia('(max-width: 1400px)').matches

@@ -123,7 +123,11 @@
             </div>
           </div>
           <div class="card__body">
-            <form class="feedback-form" action="/">
+            <form
+              class="feedback-form"
+              id="feedback-form"
+              method="post"
+              action="/">
               <div class="feedback-form__cell field">
                 <label class="field__label" for="firstName">
                   First Name
@@ -134,6 +138,8 @@
                   id="firstName"
                   placeholder="John"
                   type="text"
+                  aria-required="true"
+                  autocomplete="given-name"
                   required />
               </div>
               <div class="feedback-form__cell field">
@@ -142,7 +148,8 @@
                   class="field__control"
                   id="lastName"
                   placeholder="Doe"
-                  type="text" />
+                  type="text"
+                  autocomplete="family-name" />
               </div>
               <div class="feedback-form__cell field">
                 <label class="field__label" for="email">
@@ -154,6 +161,8 @@
                   id="email"
                   placeholder="john.doe@example.com"
                   type="email"
+                  aria-required="true"
+                  autocomplete="email"
                   required />
               </div>
               <div class="feedback-form__cell field">
@@ -161,24 +170,84 @@
                   Phone Number
                 </label>
                 <div class="field__body">
-                  <div class="select">
-                    <label class="select-label" for="phoneNumberPrefix">
+                  <div class="select" data-js-select>
+                    <label
+                      class="select__label visually-hidden"
+                      id="phone-number-prefix-select-label"
+                      for="phoneNumberPrefix">
                       Phone Number Prefix
                     </label>
                     <select
-                      class="select__original-control"
-                      id="phoneNumberPrefix">
+                      class="select__original-control field__control"
+                      id="phoneNumberPrefix"
+                      aria-label="Country code"
+                      autocomplete="tel-country-code"
+                      tabindex="-1"
+                      data-js-select-original-control>
                       <option selected value="+7">+7</option>
                       <option value="+1">+1</option>
                       <option value="+2">+2</option>
                       <option value="+3">+3</option>
                     </select>
+                    <div class="select__body">
+                      <div
+                        class="select__button field__control"
+                        tabindex="0"
+                        role="combobox"
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-controls="phone-number-prefix-select-dropdown"
+                        aria-labelledby="phone-number-prefix-select-label"
+                        data-js-select-button>
+                        +7
+                      </div>
+                      <div
+                        class="select__dropdown"
+                        id="phone-number-prefix-select-dropdown"
+                        role="listbox"
+                        aria-labelledby="phone-number-prefix-select-label"
+                        data-js-select-dropdown>
+                        <div
+                          class="select__option is-selected is-current"
+                          id="phone-number-prefix-select-option-1"
+                          role="option"
+                          aria-selected="true"
+                          data-js-select-option>
+                          +7
+                        </div>
+                        <div
+                          class="select__option"
+                          id="phone-number-prefix-select-option-2"
+                          role="option"
+                          aria-selected="false"
+                          data-js-select-option>
+                          +1
+                        </div>
+                        <div
+                          class="select__option"
+                          id="phone-number-prefix-select-option-3"
+                          role="option"
+                          aria-selected="false"
+                          data-js-select-option>
+                          +2
+                        </div>
+                        <div
+                          class="select__option"
+                          id="phone-number-prefix-select-option-4"
+                          role="option"
+                          aria-selected="false"
+                          data-js-select-option>
+                          +3
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <input
                     class="field__control"
                     id="phoneNumber"
                     placeholder="(999) 999-99-99"
                     type="tel"
+                    autocomplete="tel"
                     data-js-input-mask="(000) 000-00-00" />
                 </div>
               </div>
@@ -191,13 +260,19 @@
                   class="field__control"
                   id="message"
                   placeholder="Write your message here..."
+                  aria-required="true"
                   required></textarea>
               </div>
               <div class="feedback-form__cell field feedback-form__cell--wide">
                 <div class="feedback-form__actions">
                   <div class="feedback-form__agreement">
                     <label class="checkbox">
-                      <input class="checkbox__input" type="checkbox" required />
+                      <input
+                        class="checkbox__input"
+                        type="checkbox"
+                        aria-required="true"
+                        autocomplete="off"
+                        required />
                       <span class="checkbox__label">
                         I agree with Terms of Use and Privacy Policy
                       </span>
@@ -205,7 +280,8 @@
                   </div>
                   <button
                     class="feedback-form__submit-button button button--accent"
-                    type="submit">
+                    type="submit"
+                    form="feedback-form">
                     Send
                   </button>
                 </div>

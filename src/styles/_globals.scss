@@ -204,6 +204,11 @@ textarea {
   }
 }
 
+mark {
+  background-color: transparent;
+  color: currentColor;
+}
+
 @supports (scrollbar-color: var(--color-accent) var(--color-dark)) {
   .custom-scrollbar {
     scrollbar-color: var(--color-accent) var(--color-dark);

@@ -57,6 +57,28 @@
 
   &__description {
     text-wrap: pretty;
+
+    &-mark {
+      background-image: linear-gradient(
+        135deg,
+        var(--color-accent) 0%,
+        var(--color-dark-15) 100%
+      );
+      background-repeat: no-repeat;
+      color: var(--color-light);
+      border-radius: rem(4);
+      padding: rem(2);
+      animation: highlight 1s forwards;
+    }
+
+    @keyframes highlight {
+      from {
+        background-size: 0%;
+      }
+      to {
+        background-size: 100%;
+      }
+    }
   }
 
   &__metrics {

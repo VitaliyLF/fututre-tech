@@ -2,8 +2,7 @@
 
 .soc1als {
   &--3-cols {
-    width: 100%;
-    max-width: rem(308);
+    width: min(100%, rem(308));
 
     .soc1als {
       &__list {

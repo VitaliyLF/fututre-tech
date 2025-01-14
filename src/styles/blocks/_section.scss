@@ -49,6 +49,6 @@
   }
 
   &__link {
-    max-width: rem(360);
+    width: min(100%, rem(360));
   }
 }

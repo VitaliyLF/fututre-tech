@@ -14,7 +14,8 @@
         rgba(20, 20, 20, 0.88) 75.53%,
         #141414 100%
       ),
-      var(--bgImg) no-repeat center / cover;
+      var(--bgImg) no-repeat center / cover,
+      var(--color-dark-10);
 
     @include laptop-above {
       background-attachment: fixed;
